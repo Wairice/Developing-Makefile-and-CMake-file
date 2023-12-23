@@ -1,0 +1,7 @@
+rule compile
+  command = g++ -MMD -MF $out.d -c $in -o $out
+  depfile = $out.d
+  deps = gcc
+
+rule link
+  command = g++ -o $out $in -L. -lcalculator
